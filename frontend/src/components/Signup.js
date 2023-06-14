@@ -12,7 +12,7 @@ function Signup(){
 
     const navigate=useNavigate();
     const onLogin=()=>{
-        navigate("/login");
+        navigate("/");
     }
 
     const onSignUpHandle=(e)=>{
