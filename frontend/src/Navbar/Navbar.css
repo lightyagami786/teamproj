@@ -1,0 +1,12 @@
+.navbar-brand{
+    color: #4a53f9;
+    font-size: xx-large;
+}
+.navs{
+    font-size:1.1rem;
+    padding:5px;
+}
+.navs:hover{
+    color:#4a53f9;
+    font-size:1.2rem;
+ }
