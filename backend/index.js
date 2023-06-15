@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const connectDB= require("./db/config.js")
 const User= require("./models/Usermodel.js")
 const userRoute= require("./routes/UserRoute.js")
+const Products=require("./models/Products.js")
 
 
 //middleware
@@ -19,9 +20,25 @@ app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use('/users', userRoute)
 //database config
 connectDB();
+app.use('/users', userRoute)
+app.post("/products",async (req,res)=>{
+    let product=new Products(req.body);
+    let result=await product.save();
+    
+    res.send({result});
+    
+});
+app.get('/products',async(req,res)=>{
+    const products=await Products.find();
+    if(products.length>0){
+        res.send(products);
+    }else{
+        res.send({result:'n p f'});
+    }
+})
+
 
 
 app.listen(5000,function(req,res){

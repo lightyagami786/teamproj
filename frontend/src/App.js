@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginPage } from "./Routes";
 import {SignupPage} from "./Routes";
+import About from "./components/About";
+import BuyProduct from "./components/BuyProduct";
+import CartPage from "./components/CartPage";
 // import { ToastContainer } from "react-toastify";
 
 function App() {
@@ -11,6 +14,10 @@ function App() {
       {/* <Route path="/" element={<h1>hil</h1>} /> */}
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/buyProducts" element={<BuyProduct/>} />
+        <Route path="/cartpage" element={<CartPage/>} />
+        
       </Routes>
 
       {/* <ToastContainer
